@@ -1201,7 +1201,7 @@ end
 })
 
 Tab3:AddButton({
-	Name = "获得章鱼哥手套",
+	Name = "获得电击手套",
 	Callback = function()
 if game.Players.LocalPlayer.leaderstats.Glove.Value == "Stun" and game.Players.LocalPlayer.Character:FindFirstChild("entered") then
 OGL = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
@@ -1229,7 +1229,7 @@ end
 wait(12.3)
 until game.Players.LocalPlayer.Character:FindFirstChild("EMPStunBadgeCounter") and game.Players.LocalPlayer.Character.EMPStunBadgeCounter.Value >= 50
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Stun equipped, or you aren't in the arena",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "你没有装备stun，或者你不在竞技场上",Image = "rbxassetid://7733658504",Time = 5})
 end
   	end 
 })
@@ -1249,7 +1249,7 @@ game.Workspace.RepressedMemoriesMap.Psychokinesis.Triggers.StopPsychoEvent.CFram
 wait(2.5)
 game.Workspace.RepressedMemoriesMap.Psychokinesis.Triggers.StopPsychoEvent.CFrame = OGL1
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You have enter limbo [ don't show all, not work ]",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "你已经进入了地狱边缘[不要显示全部，而不是工作]",Image = "rbxassetid://7733658504",Time = 5})
 end
   	end 
 })
@@ -1269,7 +1269,7 @@ task.wait(0.15)
 if workspace.DEATHBARRIER.CanTouch == true then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").DEATHBARRIER.CFrame
 else
-OrionLib:MakeNotification({Name = "Error",Content = "Please turn off Anti Death Barriers",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "请关闭防死亡障碍",Image = "rbxassetid://7733658504",Time = 5})
 end
 wait(0.1)
 game:GetService("ReplicatedStorage").WLOC:FireServer()
@@ -1296,7 +1296,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8, 106, 
 wait(0.5)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = OGL
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Fort equipped, or you have owner badge [ Don't turn on shiftlock ]",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "你没有配备Fort装备，或者你有车主徽章[不要打开换挡锁]",Image = "rbxassetid://7733658504",Time = 5})
 end
   	end    
 })
@@ -1334,7 +1334,7 @@ end
 task.wait(3.5)
 until game:GetService("BadgeService"):UserHasBadgeAsync(game.Players.LocalPlayer.UserId, 3335299217032061)
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have bus equipped, or you have owner badge",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "你没有配备公共汽车，或者你有车主徽章",Image = "rbxassetid://7733658504",Time = 5})
 end
   	end    
 })
@@ -1354,7 +1354,7 @@ game.ReplicatedStorage.HumanoidDied:FireServer(game.Players.LocalPlayer.Characte
 wait(3.75)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.BountyHunterRoom.BountyHunterBooth._configPart.CFrame * CFrame.new(-5,0,0)
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You have enter arena",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "你已经进入竞技场",Image = "rbxassetid://7733658504",Time = 5})
 end
   	end    
 })
@@ -1595,14 +1595,14 @@ game:GetService("TeleportService"):Teleport(6403373529)
 end
 game:GetService("TeleportService"):Teleport(9431156611)
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have 1000 slap.",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "你没有1000个耳光.",Image = "rbxassetid://7733658504",Time = 5})
 end
   	end    
 })
 
 Tab3:AddDropdown({
 	Name = "加入迷宫",
-	Default = "Auto Keypad",
+	Default = "获得密码",
 	Options = {"传送","获得密码"},
 	Callback = function(Value)
 _G.SelectMaze = Value
@@ -1612,7 +1612,7 @@ _G.SelectMaze = Value
 Tab3:AddButton({
 	Name = "获得迷宫的两个手套",
 	Callback = function()
-if _G.SelectMaze == "Teleport" then
+if _G.SelectMaze == "传送" then
 local teleportFunc = queueonteleport or queue_on_teleport or syn and syn.queue_on_teleport
 if teleportFunc then
     teleportFunc([[
@@ -1643,7 +1643,7 @@ end
     ]])
 end
 game:GetService("TeleportService"):Teleport(11828384869)
-elseif _G.SelectMaze == "Auto Keypad" then
+elseif _G.SelectMaze == "获得密码" then
 if not workspace:FindFirstChild("Keypad") then
 OrionLib:MakeNotification({Name = "Error",Content = "Server don't have keypad, auto start Serverhop",Image = "rbxassetid://7733658504",Time = 5})
 	for _, server in ipairs(game.HttpService:JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
@@ -1707,7 +1707,7 @@ firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), works
 wait(3.75)
 end
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have 5000 slap, or you have Owner bagde",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "你没有5000个耳光",Image = "rbxassetid://7733658504",Time = 5})
 end
   	end    
 })
@@ -1720,7 +1720,7 @@ fireclickdetector(game.Workspace.Lobby.Scene.knofe.ClickDetector)
 fireclickdetector(game.Workspace.Arena.island5.Orange.ClickDetector) 
 fireclickdetector(game.Workspace.Arena["default island"]["Rubber Ducky"].ClickDetector)
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You have Owner badge",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "您有所有者徽章",Image = "rbxassetid://7733658504",Time = 5})
 end
   	end 
 })
@@ -1731,13 +1731,13 @@ Tab3:AddButton({
 if not game:GetService("BadgeService"):UserHasBadgeAsync(game.Players.LocalPlayer.UserId, 2906002612987222) then
 game:GetService("ReplicatedStorage").IceSkate:FireServer("Freeze")
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You have Owner badge",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "您有所有者徽章",Image = "rbxassetid://7733658504",Time = 5})
 end
   	end 
 })
 
 Tab3:AddButton({
-	Name = "Get Free Lamp",
+	Name = "获得灯",
 	Callback = function()
 if game.Players.LocalPlayer.leaderstats.Glove.Value == "ZZZZZZZ" and not game:GetService("BadgeService"):UserHasBadgeAsync(game.Players.LocalPlayer.UserId, 490455814138437) then
 for i = 1,5 do
@@ -1795,14 +1795,14 @@ end
 end
 until game.Players.LocalPlayer.Character:WaitForChild("Ragdolled").Value == false
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have equiped Cloud | Badge Fish | You are in the lobby.",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "你没有装备云|徽章鱼|你在大厅里.",Image = "rbxassetid://7733658504",Time = 5})
 end
   	end 
 })
 
 Tab3:AddDropdown({
 	Name = "刷bob",
-	Default = "Slow",
+	Default = "技能好就放",
 	Options = {"技能好就放", "自动", "快速的", "普通","超级快"},
 	Callback = function(Value)
 Autobob = Value
@@ -1815,7 +1815,7 @@ GetBob = Tab3:AddToggle({
 	Callback = function(Value)
 _G.AutoFarmBob = Value
 if game.Players.LocalPlayer.leaderstats.Glove.Value == "Replica" then
-while _G.AutoFarmBob and Autobob == "Auto Spawn E" do
+while _G.AutoFarmBob and Autobob == "技能好就放" do
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") or game.Workspace:FindFirstChild("bobcap") == nil then
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"E",false,x)
 else
@@ -1824,7 +1824,7 @@ GetBob:Set(false)
 end
 task.wait(0.5)
 end
-while _G.AutoFarmBob and Autobob == "Auto Spawn" do
+while _G.AutoFarmBob and Autobob == "自动" do
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") or game.Workspace:FindFirstChild("bobcap") == nil then
 game.ReplicatedStorage.Duplicate:FireServer(true)
 else
@@ -1833,7 +1833,7 @@ GetBob:Set(false)
 end
 task.wait(5.3)
 end
-while _G.AutoFarmBob and Autobob == "Fast Spawn" do
+while _G.AutoFarmBob and Autobob == "快速的" do
 repeat task.wait() until game.Players.LocalPlayer.Character
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
 repeat task.wait()
@@ -1851,7 +1851,7 @@ end
 end
 task.wait()
 end
-while _G.AutoFarmBob and Autobob == "Normal" do
+while _G.AutoFarmBob and Autobob == "普通" do
 if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid") and game.Players.LocalPlayer.Character.Humanoid.RootPart and game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 for i,v in pairs(game.Workspace.Lobby:GetChildren()) do
 if v.Name == "Teleport1" and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
@@ -1874,7 +1874,7 @@ end
 end
 task.wait()
 end
-while _G.AutoFarmBob and Autobob == "Super Fast Spawn" do
+while _G.AutoFarmBob and Autobob == "超级快" do
 firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1.TouchInterest.Parent, 0)
 firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1.TouchInterest.Parent, 1)
 wait(0.5)
@@ -1889,7 +1889,7 @@ end
 task.wait(1.8)
 end
 elseif _G.AutoFarmBob == true then
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Replica equipped, or You have Owned Items",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "你没有装备复制品，或者你已经拥有了",Image = "rbxassetid://7733658504",Time = 5})
 wait(0.05)
 GetBob:Set(false)
 end
@@ -1989,9 +1989,9 @@ end
 })
 
 Tab3:AddDropdown({
-	Name = "农场时间",
+	Name = "afk时间",
 	Default = "",
-	Options = {"Voodoo + Fish", "MegaRock"},
+	Options = {"巫毒+鱼", ""},
 	Callback = function(Value)
 AutoTime = Value
 	end    
@@ -2000,11 +2000,11 @@ AutoTime = Value
 FarmTimeServer = Tab3:AddLabel("Farm Time [ 0 ]")
 
 GetFarmTime = Tab3:AddToggle({
-	Name = "自动时间",
+	Name = "自动",
 	Default = false,
 	Callback = function(Value)
 _G.AutoTimeGet = Value
-if AutoTime == "Voodoo + Fish" then
+if AutoTime == "巫毒+鱼" then
 if game.Players.LocalPlayer.leaderstats.Glove.Value == "Ghost" and game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 game.ReplicatedStorage.Ghostinvisibilityactivated:FireServer()
 fireclickdetector(workspace.Lobby["ZZZZZZZ"].ClickDetector)
@@ -2021,13 +2021,13 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace["Saf
 wait(0.2)
 game:GetService("ReplicatedStorage").ZZZZZZZSleep:FireServer()
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Ghost equipped, or You have go to lobby",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "你没有幽灵的装备，或者你必须去大厅",Image = "rbxassetid://7733658504",Time = 5})
 end
-elseif AutoTime ~= "Voodoo + Fish" or Value == false then
+elseif AutoTime ~= "巫毒+鱼" or Value == false then
 SleepTimeandTimeGhost = 0
 FarmTimeServer:Set("Farm Time [ 0 ]")
 end
-while _G.AutoTimeGet and AutoTime == "Voodoo + Fish" and task.wait() do
+while _G.AutoTimeGet and AutoTime == "巫毒+鱼" and task.wait() do
 if game.Players.LocalPlayer.leaderstats.Glove.Value == "ZZZZZZZ" and game.Players.LocalPlayer.Character:FindFirstChild("entered") and game.Players.LocalPlayer.Character:FindFirstChild("Ragdolled").Value == true then
 task.wait(1)
 SleepTimeandTimeGhost += 1
@@ -2037,18 +2037,18 @@ SleepTimeandTimeGhost = 0
 FarmTimeServer:Set("Farm Time [ 0 ]")
 end
 end
-if AutoTime == "MegaRock" then
+if AutoTime == "巨石" then
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") and game.Players.LocalPlayer.leaderstats.Glove.Value == "Diamond" then
 game:GetService("ReplicatedStorage"):WaitForChild("Rockmode"):FireServer()
 end
-elseif AutoTime ~= "MegaRock" or Value == false then
+elseif AutoTime ~= "巨石" or Value == false then
 if game.Players.LocalPlayer.leaderstats.Glove.Value == "Diamond" and game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil or game.Players.LocalPlayer.Character:FindFirstChild("rock") ~= nil then
 game:GetService("ReplicatedStorage"):WaitForChild("Rockmode"):FireServer()
 TimeMegarock = 0
 FarmTimeServer:Set("Farm Time [ 0 ]")
 end
 end
-while _G.AutoTimeGet and AutoTime == "MegaRock" and task.wait() do
+while _G.AutoTimeGet and AutoTime == "巨石" and task.wait() do
 task.wait(1)
 if game.Players.LocalPlayer.leaderstats.Glove.Value == "Diamond" and game.Players.LocalPlayer.Character:FindFirstChild("entered") and game.Players.LocalPlayer.Character:FindFirstChild("rock") then
 TimeMegarock += 1
@@ -2063,7 +2063,7 @@ end
 
 Tab3:AddDropdown({
 	Name = "自动积木",
-	Default = "Slow",
+	Default = "用这个",
 	Options = {"建议别用", "用这个"},
 	Callback = function(Value)
 AutoBrick = Value
@@ -2071,22 +2071,22 @@ AutoBrick = Value
 })
 
 AutoFarmBrick = Tab3:AddToggle({
-	Name = "自动积木",
+	Name = "自动",
 	Default = false,
 	Callback = function(Value)
 	    Brickfarm = Value
 if game.Players.LocalPlayer.leaderstats.Glove.Value == "Brick" then
-while Brickfarm and AutoBrick == "Slow" do
+while Brickfarm and AutoBrick == "建议别用" do
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"E",false,x)
 task.wait(5.05)
 end
-while Brickfarm and AutoBrick == "Fast" do
+while Brickfarm and AutoBrick == "用这个" do
 game:GetService("ReplicatedStorage").lbrick:FireServer()
 game:GetService("Players").LocalPlayer.PlayerGui.BRICKCOUNT.ImageLabel.TextLabel.Text = game:GetService("Players").LocalPlayer.PlayerGui.BRICKCOUNT.ImageLabel.TextLabel.Text + 1
 wait(1.5)
 end
 elseif Brickfarm == true then
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Brick equipped",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "你没有砖的装备",Image = "rbxassetid://7733658504",Time = 5})
 wait(0.05)
 AutoFarmBrick:Set(false)
 end
