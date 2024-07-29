@@ -1113,21 +1113,21 @@ end
 Tab3:AddDropdown({
 	Name = "复古",
 	Default = "",
-	Options = {"到达终点", "全部展示", "不全部", "传送第一关", "传送第二关", "传送第三关", "Click Button"},
+	Options = {"到达终点", "全部展示", "不全部", "传送第一关", "传送第二关", "传送第三关", "单击按钮"},
 	Callback = function(Value)
 if Value == "到达终点" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.FinishDoor_Retro.Part.CFrame
-elseif Value == "Show All" then
+elseif Value == "全部展示" then
 game.ReplicatedStorage.Assets.Retro.Parent = game.Workspace
-elseif Value == "Off Show All" then
+elseif Value == "不全部" then
 game.Workspace.Retro.Parent = game.ReplicatedStorage.Assets
-elseif Value == "Teleport Spawn 1" then
+elseif Value == "传送第一关" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Retro.Map.RetroObbyMap.Spawn.CFrame
-elseif Value == "Teleport Spawn 2" then
+elseif Value == "传送第二关" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Retro.Map.RetroObbyMap.Spawn_stage2.CFrame
-elseif Value == "Teleport Spawn 3" then
+elseif Value == "传送第三关" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Retro.Map.RetroObbyMap.Spawn_stage3.CFrame
-elseif Value == "Click Button" then
+elseif Value == "单击按钮" then
 if game:GetService("ReplicatedStorage").Assets.Retro then
 game.ReplicatedStorage.Assets.Retro.Parent = workspace
 wait(1.5)
@@ -1142,19 +1142,19 @@ end
 Tab3:AddDropdown({
 	Name = "传送遗忘之地",
 	Default = "",
-	Options = {"全部展开","不全部","传送","直接传送","传送到鲍勃玩偶","Click Bob Plushie [ Quests Hitman ]"},
+	Options = {"全部展开","不全部","传送","传送门户","传送到鲍勃玩偶","单击Bob Plushie [任务杀手]"},
 	Callback = function(Value)
-if Value == "Show All" then
+if Value == "全部展示" then
 game.ReplicatedStorage.RepressedMemoriesMap.Parent = game.Workspace
-elseif Value == "Off Show All" then
+elseif Value == "不全部" then
 game.Workspace.RepressedMemoriesMap.Parent = game.ReplicatedStorage
-elseif Value == "Teleport Enter" then
+elseif Value == "传送" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.RepressedMemories.Limbo.CFrame * CFrame.new(0,-5,0)
-elseif Value == "Teleport Portal" then
+elseif Value == "传送门户" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.RepressedMemories.SimonSaysGate.Portal.CFrame
-elseif Value == "Teleport Bob Plushie" then
+elseif Value == "传送到鲍勃玩偶" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.RepressedMemories._ugcQuestObjectBobPlushie.Handle.CFrame
-elseif Value == "Click Bob Plushie [ Quests Hitman ]" then
+elseif Value == "单击Bob Plushie [任务杀手]" then
 if game:GetService("ReplicatedStorage").RepressedMemoriesMap then
 game.ReplicatedStorage.RepressedMemoriesMap.Parent = game.Workspace
 wait(1)
@@ -1177,13 +1177,13 @@ end
 Tab3:AddDropdown({
 	Name = "传送到章鱼哥的地方",
 	Default = "",
-	Options = {"展开全部","不全部", "传送"},
+	Options = {"全部展示","不全部", "传送"},
 	Callback = function(Value)
-if Value == "Show All" then
+if Value == "全部展示" then
 game.ReplicatedStorage.AbyssAssets.Abyss.Parent = game.Workspace
-elseif Value == "Off Show All" then
+elseif Value == "不全部" then
 game.Workspace.Abyss.Parent = game.ReplicatedStorage.AbyssAssets
-elseif Value == "Teleport Enter" then
+elseif Value == "传送" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(194, 35, -12671)
 end
 	end    
